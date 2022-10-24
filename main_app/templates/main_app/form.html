@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+ADD INFO | S.A.M.P.
+
+{% endblock %}
+
+{% block content %}
+
+{% if object %}
+<h1> Edit {{ object.name }} 's Detail</h1>
+{% else %}
+<h1>add new Info</h1>
+{% endif %}
+
+<h1>ADD INFO HERE</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+<input type="submit" value="{% if object %} Edit {% else %} Add New {% endif %}" class="btn aqua">
+{{ form }}
+
+</form>
+
+{% endblock %}

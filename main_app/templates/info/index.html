@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    INFO | S.A.M.P.
+{% endblock %}
+
+
+{% block content %}
+    <h1> Workout Information </h1>
+    <p> Find Your Information Here or 
+        <a href="/contact"> CONTACT US</a>
+    </p>
+    {% for info in info %}
+    <a href="{% url 'detail' info.id %}">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title"> 
+                    {{ info.name }}
+                    {{ info.date }}
+                    {{ info.time }}
+                    {{ info.location }}
+                </span>
+            </div>
+        </div>
+    </a>
+        {% endfor %}
+{% endblock%}

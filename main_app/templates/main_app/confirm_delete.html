@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+DELETE INFO | S.A.M.P.
+
+{% endblock %}
+
+{% block content %}
+
+<h1>Are You Sure You Want to delete {{ info }}</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Yes - Delete">
+    <a href="{% url 'cats_detail' object.id %}"> No - Cancel</a>
+</form>
+
+
+</form>
+
+{% endblock %}
